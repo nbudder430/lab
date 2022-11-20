@@ -9,40 +9,38 @@ class Account:
 
     def deposit(self, amount: float) -> True or False:
         """
-        This function takes an amount and adds it to the account balance
-        :param amount: This is the amount being deposited into the account, and must be > 0
-        :return: Returns True if the transaction was successful, Returns False if not
+        Function adds amount to balance
+        :param amount: Amount to Add
+        :return: True or False
         """
         if amount > 0:
             self.__account_balance += amount
             return True
         else:
-            self.__account_balance += 0
             return False
 
     def withdraw(self, amount: float) -> True or False:
         """
-        This function takes an amount and subtracts it to the account balance
-        :param amount: This is the amount being withdrawn from the account, and must be > 0 and < account balance
-        :return: Returns True if the transaction was successful, Returns False if not
+        Function subtracts amount from balance
+        :param amount: Amount to Subtract
+        :return: True or False
         """
-        if self.__account_balance >= amount > 0:
+        if self.__account_balance >= amount and amount > 0:
             self.__account_balance -= amount
             return True
         else:
-            self.__account_balance += 0
             return False
 
-    def get_balance(self):
+    def get_balance(self) -> float:
         """
-        This function retrieves the account balance and returns it
-        :return: Returns the account balance
+        Function to give Account Balance
+        :return: Account Balance
         """
         return self.__account_balance
 
-    def get_name(self):
+    def get_name(self) -> str:
         """
-        This function retrieves the account balance and returns it
-        :return: Returns the account name
+        Function to give Account Name
+        :return: Account Name
         """
         return self.__account_name
